@@ -1,8 +1,11 @@
 /* Base Styles */
 :root {
-    --primary-color: #ff66b3; /* Rose néon */
-    --secondary-color: #66f3ff; /* Cyan néon */
-    --tertiary-color: #b399ff; /* Violet néon */
+    --primary-color: #ff66b3;
+    /* Rose néon */
+    --secondary-color: #66f3ff;
+    /* Cyan néon */
+    --tertiary-color: #b399ff;
+    /* Violet néon */
     --dark-color: #0a0a14;
     --darker-color: #05050a;
     --light-color: #f0e6ff;
@@ -32,8 +35,13 @@ body::before {
 }
 
 @keyframes scanline {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(100vh); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(100vh);
+    }
 }
 
 /* Curseur personnalisé */
@@ -169,7 +177,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 40px 40px;
@@ -183,13 +191,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0) 3px,
-        var(--scanline-color) 1px,
-        var(--scanline-color) 4px
-    );
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0) 3px,
+            var(--scanline-color) 1px,
+            var(--scanline-color) 4px);
     z-index: -1;
     pointer-events: none;
 }
@@ -217,11 +223,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 102, 179, 0.1) 0%,
-        rgba(102, 243, 255, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 102, 179, 0.1) 0%,
+            rgba(102, 243, 255, 0.1) 100%);
     z-index: -1;
     opacity: 0.5;
 }
@@ -304,7 +308,8 @@ body::before {
     font-family: 'Major Mono Display', monospace;
 }
 
-.glitch-text::before, .glitch-text::after {
+.glitch-text::before,
+.glitch-text::after {
     content: attr(data-text);
     position: absolute;
     top: 0;
@@ -329,29 +334,83 @@ body::before {
 }
 
 @keyframes glitch-effect {
-    0%, 100% { transform: translate(0); }
-    20% { transform: translate(-5px, 5px); }
-    40% { transform: translate(-5px, -5px); }
-    60% { transform: translate(5px, 5px); }
-    80% { transform: translate(5px, -5px); }
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-5px, 5px);
+    }
+
+    40% {
+        transform: translate(-5px, -5px);
+    }
+
+    60% {
+        transform: translate(5px, 5px);
+    }
+
+    80% {
+        transform: translate(5px, -5px);
+    }
 }
 
 @keyframes glitch-effect-2 {
-    0%, 100% { transform: translate(0); }
-    10% { transform: translate(-2px, 2px); }
-    30% { transform: translate(0, -3px); }
-    50% { transform: translate(4px, 1px); }
-    70% { transform: translate(-3px, 0); }
-    90% { transform: translate(2px, 3px); }
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    10% {
+        transform: translate(-2px, 2px);
+    }
+
+    30% {
+        transform: translate(0, -3px);
+    }
+
+    50% {
+        transform: translate(4px, 1px);
+    }
+
+    70% {
+        transform: translate(-3px, 0);
+    }
+
+    90% {
+        transform: translate(2px, 3px);
+    }
 }
 
 @keyframes glitch-effect-3 {
-    0%, 100% { transform: translate(0); }
-    15% { transform: translate(3px, -2px); }
-    35% { transform: translate(-1px, 4px); }
-    55% { transform: translate(-3px, -1px); }
-    75% { transform: translate(0, 3px); }
-    95% { transform: translate(-4px, 0); }
+
+    0%,
+    100% {
+        transform: translate(0);
+    }
+
+    15% {
+        transform: translate(3px, -2px);
+    }
+
+    35% {
+        transform: translate(-1px, 4px);
+    }
+
+    55% {
+        transform: translate(-3px, -1px);
+    }
+
+    75% {
+        transform: translate(0, 3px);
+    }
+
+    95% {
+        transform: translate(-4px, 0);
+    }
 }
 
 .subtitle {
@@ -376,7 +435,9 @@ body::before {
     gap: 15px;
 }
 
-.btn-primary, .btn-secondary, .btn-tertiary {
+.btn-primary,
+.btn-secondary,
+.btn-tertiary {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -427,7 +488,9 @@ body::before {
     box-shadow: 0 0 15px rgba(102, 243, 255, 0.7);
 }
 
-.btn-primary i, .btn-secondary i, .btn-tertiary i {
+.btn-primary i,
+.btn-secondary i,
+.btn-tertiary i {
     margin-right: 8px;
 }
 
@@ -456,12 +519,15 @@ body::before {
         transform: translateY(0) translateX(0);
         opacity: 0;
     }
+
     10% {
         opacity: 0.6;
     }
+
     90% {
         opacity: 0.6;
     }
+
     100% {
         transform: translateY(-100vh) translateX(20px);
         opacity: 0;
@@ -481,13 +547,11 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0),
-        rgba(0, 0, 0, 0) 3px,
-        var(--scanline-color) 1px,
-        var(--scanline-color) 4px
-    );
+    background: repeating-linear-gradient(0deg,
+            rgba(0, 0, 0, 0),
+            rgba(0, 0, 0, 0) 3px,
+            var(--scanline-color) 1px,
+            var(--scanline-color) 4px);
     z-index: -1;
     pointer-events: none;
 }
@@ -567,8 +631,13 @@ body::before {
 }
 
 @keyframes border-pulse {
-    0% { opacity: 0.3; }
-    100% { opacity: 0.7; }
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
 }
 
 .profile-image-glitch {
@@ -587,8 +656,16 @@ body::before {
 }
 
 @keyframes glitch-appear {
-    0%, 98%, 100% { opacity: 0; }
-    99% { opacity: 0.3; }
+
+    0%,
+    98%,
+    100% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0.3;
+    }
 }
 
 .profile-nav-dots {
@@ -632,11 +709,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 102, 179, 0.1) 0%,
-        rgba(102, 243, 255, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 102, 179, 0.1) 0%,
+            rgba(102, 243, 255, 0.1) 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -725,7 +800,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 60px 60px;
@@ -762,11 +837,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 102, 179, 0.1) 0%,
-        rgba(102, 243, 255, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 102, 179, 0.1) 0%,
+            rgba(102, 243, 255, 0.1) 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -814,7 +887,7 @@ body::before {
 }
 
 .proficiency {
-    background-color: rgba(26, 10, 30, 0.5);
+    background-color: white(26, 10, 30, 0.5);
     border: 1px solid var(--terminal-border);
     border-radius: 8px;
     padding: 30px;
@@ -822,7 +895,7 @@ body::before {
 }
 
 .proficiency h3 {
-    color: var(--primary-color);
+    color: white;
     margin-bottom: 25px;
     font-size: 1.3rem;
     font-family: 'Major Mono Display', monospace;
@@ -841,18 +914,27 @@ body::before {
     font-weight: 500;
 }
 
+.proficiency-label {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-family: 'Rajdhani', sans-serif;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+
 .percentage {
     margin-left: auto;
     font-family: 'Rajdhani', sans-serif;
     font-weight: 600;
-    color: var(--primary-color);
+    color: white;
 }
 
 .progress-bar {
     flex: 0 0 100%;
     width: 100%;
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: white;
     border-radius: 4px;
     overflow: hidden;
     margin-top: 8px;
@@ -873,17 +955,20 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 255, 255, 0.2) 0%,
-        rgba(255, 255, 255, 0) 100%
-    );
+    background: linear-gradient(90deg,
+            white(251, 249, 249, 0.2) 0%,
+            white 100%);
     animation: progress-shine 2s infinite;
 }
 
 @keyframes progress-shine {
-    0% { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
+    0% {
+        transform: translateX(-100%);
+    }
+
+    100% {
+        transform: translateX(100%);
+    }
 }
 
 /* Projects Section */
@@ -900,7 +985,7 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: 
+    background-image:
         linear-gradient(var(--grid-color) 1px, transparent 1px),
         linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
     background-size: 50px 50px;
@@ -927,7 +1012,8 @@ body::before {
     transition: all 0.3s ease;
 }
 
-.filter-btn.active, .filter-btn:hover {
+.filter-btn.active,
+.filter-btn:hover {
     background-color: var(--primary-color);
     color: var(--dark-color);
     border-color: var(--primary-color);
@@ -1001,6 +1087,9 @@ body::before {
     justify-content: center;
     opacity: 0;
     transition: opacity 0.3s ease;
+    pointer-events: none;
+    /* Ajoutez cette ligne */
+
 }
 
 .project-card:hover .project-overlay {
@@ -1010,6 +1099,9 @@ body::before {
 .project-icon-links {
     display: flex;
     gap: 20px;
+    pointer-events: auto;
+    /* Ajoutez cette ligne */
+
 }
 
 .project-icon {
@@ -1023,6 +1115,9 @@ body::before {
     transition: all 0.3s ease;
     color: var(--light-color);
     font-size: 1.2rem;
+    pointer-events: auto;
+    /* Ajoutez cette ligne */
+
 }
 
 .project-icon:hover {
@@ -1095,11 +1190,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 102, 179, 0.1) 0%,
-        rgba(102, 243, 255, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 102, 179, 0.1) 0%,
+            rgba(102, 243, 255, 0.1) 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -1177,11 +1270,9 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(
-        135deg,
-        rgba(255, 102, 179, 0.1) 0%,
-        rgba(102, 243, 255, 0.1) 100%
-    );
+    background: linear-gradient(135deg,
+            rgba(255, 102, 179, 0.1) 0%,
+            rgba(102, 243, 255, 0.1) 100%);
     z-index: -1;
     opacity: 0.3;
 }
@@ -1276,19 +1367,19 @@ body::before {
     .hero-content {
         padding-top: 60px;
     }
-    
+
     .glitch-text {
         font-size: 3rem;
     }
-    
+
     .subtitle {
         font-size: 1.2rem;
     }
-    
+
     .about-content {
         flex-direction: column;
     }
-    
+
     .profile-image-wrapper {
         max-width: 300px;
     }
@@ -1307,46 +1398,48 @@ body::before {
         padding: 40px 0;
         transition: all 0.5s ease;
     }
-    
+
     .nav-menu.active {
         left: 0;
     }
-    
+
     .nav-link {
         margin: 15px 0;
         font-size: 1.2rem;
     }
-    
+
     .mobile-menu-btn {
         display: flex;
     }
-    
+
     .mobile-menu-btn.active span:nth-child(1) {
         transform: rotate(45deg) translate(5px, 5px);
     }
-    
+
     .mobile-menu-btn.active span:nth-child(2) {
         opacity: 0;
     }
-    
+
     .mobile-menu-btn.active span:nth-child(3) {
         transform: rotate(-45deg) translate(7px, -6px);
     }
-    
+
     .hero-buttons {
         flex-direction: column;
     }
-    
-    .btn-primary, .btn-secondary, .btn-tertiary {
+
+    .btn-primary,
+    .btn-secondary,
+    .btn-tertiary {
         margin-right: 0;
         width: 100%;
         text-align: center;
     }
-    
+
     .section-title {
         font-size: 2rem;
     }
-    
+
     .projects-filter {
         justify-content: center;
     }
@@ -1356,19 +1449,19 @@ body::before {
     .glitch-text {
         font-size: 2.5rem;
     }
-    
+
     .terminal-body {
         padding: 20px;
     }
-    
+
     .section-title {
         font-size: 1.8rem;
     }
-    
+
     .contact-content {
         grid-template-columns: 1fr;
     }
-    
+
     .skills-grid {
         grid-template-columns: 1fr;
     }
