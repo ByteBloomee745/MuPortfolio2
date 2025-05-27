@@ -262,3 +262,58 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     // Initialize particles
     createParticles();
 });
+
+// Effets de particules interactives
+document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.7) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = e.clientX + 'px';
+        particle.style.top = e.clientY + 'px';
+        particle.style.backgroundColor = 
+            Math.random() > 0.5 ? 'var(--primary-color)' : 'var(--secondary-color)';
+        document.body.appendChild(particle);
+        
+        setTimeout(() => {
+            particle.style.opacity = '0';
+            particle.style.transform = 'scale(2)';
+            setTimeout(() => particle.remove(), 500);
+        }, 1000);
+    }
+});
+
+// Animation de texte futuriste
+const titles = document.querySelectorAll('.section-title, .nav-logo');
+titles.forEach(title => {
+    const letters = title.textContent.split('');
+    title.innerHTML = letters.map(letter => 
+        `<span class="glitch-char">${letter}</span>`
+    ).join('');
+    
+    setInterval(() => {
+        const chars = title.querySelectorAll('.glitch-char');
+        chars.forEach(char => {
+            if (Math.random() > 0.9) {
+                char.style.textShadow = '0 0 5px white';
+                char.style.animation = 'glitch-effect 0.3s linear';
+                setTimeout(() => {
+                    char.style.textShadow = '';
+                    char.style.animation = '';
+                }, 300);
+            }
+        });
+    }, 100);
+});
+    
+    // Affichage dynamique du niveau de compétence
+    item.addEventListener('mouseenter', function() {
+        const tooltip = document.createElement('div');
+        tooltip.className = 'skill-tooltip';
+        tooltip.textContent = `${this.textContent} - ${Math.floor(Math.random() * 20) + 80}%`;
+        this.appendChild(tooltip);
+    });
+    
+    item.addEventListener('mouseleave', function() {
+        const tooltip = this.querySelector('.skill-tooltip');
+        if (tooltip) tooltip.remove();
+    });
